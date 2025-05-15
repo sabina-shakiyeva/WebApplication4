@@ -1,4 +1,6 @@
 
+using WebApplication4.Services;
+
 namespace WebApplication4
 {
     public class Program
@@ -13,7 +15,7 @@ namespace WebApplication4
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddScoped<IProductService, ProductService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
